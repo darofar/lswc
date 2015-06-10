@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="p2_angrybirds" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Angulo de Tiro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-EC-uBy">
+                                <rect key="frame" x="16" y="472" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Velocidad Inicial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffO-Ij-KXs">
+                                <rect key="frame" x="16" y="518" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Distancia al Objetivo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-iA-WX5">
+                                <rect key="frame" x="16" y="564" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-6Q-jaO">
+                                <rect key="frame" x="212" y="560" width="374" height="31"/>
+                                <connections>
+                                    <action selector="changeTargetDistance:" destination="BYZ-38-t0r" eventType="valueChanged" id="eaz-aq-dgT"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-UC-OtA" customClass="TrajectoryView" customModule="p2_angrybirds">
+                                <rect key="frame" x="16" y="31" width="568" height="400"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="birdImage" value="bird"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="pigImage" value="pig"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-nI-Bol">
+                                <rect key="frame" x="212" y="514" width="374" height="31"/>
+                                <connections>
+                                    <action selector="changeSpeed:" destination="BYZ-38-t0r" eventType="valueChanged" id="JCA-Vp-t0b"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v3C-6x-zJO">
+                                <rect key="frame" x="212" y="468" width="374" height="31"/>
+                                <connections>
+                                    <action selector="changeAngel:" destination="BYZ-38-t0r" eventType="valueChanged" id="yBF-nP-mqC"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="2yc-mx-xqg"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="leading" secondItem="v3C-6x-zJO" secondAttribute="leading" id="5Yg-HW-Gh4"/>
+                            <constraint firstItem="ARz-nI-Bol" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5wY-o1-eu0"/>
+                            <constraint firstItem="v3C-6x-zJO" firstAttribute="leading" secondItem="1QI-EC-uBy" secondAttribute="trailing" constant="81" id="7mY-n7-5cb"/>
+                            <constraint firstItem="tNE-iA-WX5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8MY-C4-2d7"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="leading" secondItem="ffO-Ij-KXs" secondAttribute="leading" id="8R7-dW-zNx"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="trailing" secondItem="v3C-6x-zJO" secondAttribute="trailing" id="Fzn-3b-z61"/>
+                            <constraint firstItem="v3C-6x-zJO" firstAttribute="trailing" secondItem="sq6-UC-OtA" secondAttribute="trailing" id="HLL-j4-mW7"/>
+                            <constraint firstItem="ffO-Ij-KXs" firstAttribute="top" secondItem="1QI-EC-uBy" secondAttribute="bottom" constant="25" id="Hby-df-GhO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tNE-iA-WX5" secondAttribute="bottom" constant="15" id="HcA-zS-abJ"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="leading" secondItem="1QI-EC-uBy" secondAttribute="leading" id="HdN-Qx-Eua"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o2i-6Q-jaO" secondAttribute="bottom" constant="8" symbolic="YES" id="Ib4-z8-eEW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sq6-UC-OtA" secondAttribute="trailing" constant="4" id="KjW-PD-4Xn"/>
+                            <constraint firstItem="1QI-EC-uBy" firstAttribute="bottom" secondItem="v3C-6x-zJO" secondAttribute="bottom" id="Mbl-fH-fHx"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="leading" secondItem="ARz-nI-Bol" secondAttribute="leading" id="N1Q-KM-8vx"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="trailing" secondItem="ARz-nI-Bol" secondAttribute="trailing" id="N6I-to-YL9"/>
+                            <constraint firstItem="1QI-EC-uBy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Oif-RX-v7X"/>
+                            <constraint firstItem="1QI-EC-uBy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Pdk-df-8Rf"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="trailing" secondItem="v3C-6x-zJO" secondAttribute="trailing" id="Qtz-y3-HDt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o2i-6Q-jaO" secondAttribute="trailing" id="RX3-q9-Tpu"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="T5N-Gx-6Wr"/>
+                            <constraint firstItem="v3C-6x-zJO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UrA-4S-L1a"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="leading" secondItem="tNE-iA-WX5" secondAttribute="trailing" constant="40" id="W6U-aF-W3O"/>
+                            <constraint firstItem="1QI-EC-uBy" firstAttribute="centerY" secondItem="v3C-6x-zJO" secondAttribute="centerY" id="WSy-RV-1Tf"/>
+                            <constraint firstItem="ffO-Ij-KXs" firstAttribute="centerY" secondItem="ARz-nI-Bol" secondAttribute="centerY" id="WzX-Zx-iLP"/>
+                            <constraint firstItem="v3C-6x-zJO" firstAttribute="top" secondItem="sq6-UC-OtA" secondAttribute="bottom" constant="37" id="acn-RZ-pOs"/>
+                            <constraint firstItem="tNE-iA-WX5" firstAttribute="top" secondItem="ffO-Ij-KXs" secondAttribute="bottom" constant="25" id="ckt-sI-QzX"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="centerX" secondItem="tNE-iA-WX5" secondAttribute="centerX" id="dR2-mJ-eod"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="leading" secondItem="tNE-iA-WX5" secondAttribute="leading" id="dt5-b1-3Cu"/>
+                            <constraint firstItem="ARz-nI-Bol" firstAttribute="trailing" secondItem="v3C-6x-zJO" secondAttribute="trailing" id="f9O-U1-Uus"/>
+                            <constraint firstItem="1QI-EC-uBy" firstAttribute="leading" secondItem="ffO-Ij-KXs" secondAttribute="leading" id="gjl-8r-8b0"/>
+                            <constraint firstItem="ffO-Ij-KXs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jsT-x9-huV"/>
+                            <constraint firstItem="tNE-iA-WX5" firstAttribute="leading" secondItem="sq6-UC-OtA" secondAttribute="leading" id="mVu-sb-m8e"/>
+                            <constraint firstItem="v3C-6x-zJO" firstAttribute="top" secondItem="sq6-UC-OtA" secondAttribute="bottom" constant="23" id="pr9-8Q-sBS"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="qk8-DA-Q6X"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="centerY" secondItem="tNE-iA-WX5" secondAttribute="centerY" id="rXV-a1-5jS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o2i-6Q-jaO" secondAttribute="bottom" constant="10" id="rpD-87-9n5"/>
+                            <constraint firstItem="tNE-iA-WX5" firstAttribute="top" secondItem="ffO-Ij-KXs" secondAttribute="bottom" constant="25" id="sf7-hW-dqb"/>
+                            <constraint firstItem="ARz-nI-Bol" firstAttribute="top" secondItem="v3C-6x-zJO" secondAttribute="bottom" constant="36" id="st2-CJ-eH6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sq6-UC-OtA" secondAttribute="trailing" constant="20" id="tN3-6a-VOx"/>
+                            <constraint firstItem="1QI-EC-uBy" firstAttribute="top" secondItem="sq6-UC-OtA" secondAttribute="bottom" constant="41" id="tXM-ph-dEi"/>
+                            <constraint firstItem="o2i-6Q-jaO" firstAttribute="top" secondItem="ARz-nI-Bol" secondAttribute="bottom" constant="12" id="vD6-s9-cJp"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yCz-PP-2Hf"/>
+                            <constraint firstItem="sq6-UC-OtA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="znS-sY-hl9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KjW-PD-4Xn"/>
+                                <exclude reference="T5N-Gx-6Wr"/>
+                                <exclude reference="qk8-DA-Q6X"/>
+                                <exclude reference="tN3-6a-VOx"/>
+                                <exclude reference="Mbl-fH-fHx"/>
+                                <exclude reference="7mY-n7-5cb"/>
+                                <exclude reference="pr9-8Q-sBS"/>
+                                <exclude reference="st2-CJ-eH6"/>
+                                <exclude reference="ckt-sI-QzX"/>
+                                <exclude reference="Qtz-y3-HDt"/>
+                                <exclude reference="dR2-mJ-eod"/>
+                                <exclude reference="vD6-s9-cJp"/>
+                                <exclude reference="Ib4-z8-eEW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="angleSlider" destination="v3C-6x-zJO" id="v46-uk-lTc"/>
+                        <outlet property="speedSlider" destination="ARz-nI-Bol" id="Dqi-F4-3bG"/>
+                        <outlet property="targetSlider" destination="o2i-6Q-jaO" id="WoM-2b-Y7h"/>
+                        <outlet property="trajectoryView" destination="sq6-UC-OtA" id="KM9-g0-vxC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="800" height="600"/>
+        <image name="bird" width="1024" height="1024"/>
+        <image name="pig" width="894" height="894"/>
+    </resources>
+</document>
